@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from . import views               # means from blog import views file
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
