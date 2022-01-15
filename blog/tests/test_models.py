@@ -10,16 +10,17 @@ class PostModelTests(TestCase):
         Post.objects.create(
             author=user,
             title="Sample Title",
-            text="Sample Text")
+            text="Sample Text",
+            )
 
     def test_post_title(self):
-        post = Post.objects.get(title="Sample Title")
-        self.assertEquals(f'{post.title}', "Sample Title")
+        post = Post.objects.get(id=1)
+        self.assertEquals(post.title, "Sample Title")
 
     def test_post_content(self):
-        post = Post.objects.get(title="Sample Title")
-        self.assertEquals(f"{post.text}", "Sample Text")
+        post = Post.objects.get(id=1)
+        self.assertEquals(post.text, "Sample Text")
 
     def test_post_string_representation(self):
-        post = Post.objects.get(title="Sample Title")
-        self.assertEquals(str(post), f"{post.title}")
+        post = Post.objects.get(id=1)
+        self.assertEquals(str(post), post.title)
